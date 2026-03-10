@@ -27,14 +27,26 @@ A small FastAPI service that exposes sentence-transformers and Hugging Face embe
 
 ## Run in Colab
 
-Open `embeddings_inference_server.ipynb` in Google Colab and run the cells. The notebook installs `requirements.txt`, sets environment variables in the session and runs `run_server.py`. When `NGROK_AUTH_TOKEN` is provided the notebook prints a public ngrok URL.
-
----
-
-## Environment variables
+Open `embeddings_inference_server.ipynb` in Google Colab and run the cells. The notebook installs `requirements.txt`, sets environment variables in the session and runs `run_server.py`. When `NGROK_AUTH_TOKEN` is provided the notebook prints a public ngrok URL. Environment variables are:
 
 * `MODEL_DIR` — HF / sentence-transformers model id or local path.
 * `NGROK_AUTH_TOKEN` — optional ngrok token.
+
+---
+
+## Example test
+
+Run the command:
+
+````
+curl -X POST https://your-ngrok-server/ -H "Content-Type: application/json" -d "{\"inputs\":[\"test\"]}"
+````
+
+Expected result:
+
+````
+[[0.03982217609882355,-0.030197851359844208,-0.12821190059185028, ...
+````
 
 ---
 
