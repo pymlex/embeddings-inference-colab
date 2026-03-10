@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+torch
+sentence-transformers
+nest-asyncio
+pyngrok
+python-multipart
